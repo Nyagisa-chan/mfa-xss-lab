@@ -11,6 +11,7 @@ app.use((req, res, next) => {
   res.set('X-Powered-By', 'SCENARIO75{Node.js}');
   next();
 });
+app.use(express.static(__dirname));
 
 const users = { "admin": "admin123" };
 
@@ -53,7 +54,9 @@ app.post('/login', (req, res) => {
     
     if (users[username] && users[username] === password) {
         res.cookie('pre_mfa_session', 'pending_mfa_verification', { httpOnly: false });
-        res.cookie('SCENARIO75{pre_mfa_session}', 'SCENARIO75{pending_mfa_verification}', { httpOnly: false });
+        res.cookie('Cookie_pre_mfa', 'SCENARIO75{pre_mfa_session}', { httpOnly: false });
+        res.cookie('Cookie_pending_mfa', 'SCENARIO75{pending_mfa_verification}', { httpOnly: false });
+        res.cookie('mfa_insecure_httponly', 'SCENARIO75{False}', { httpOnly: false });
         res.redirect('/mfa');
     } else {
         res.redirect('/login?error=1');
@@ -98,6 +101,12 @@ app.get('/dashboard', (req, res) => {
 
 app.post('/feedback', simpleWAF, (req, res) => {
     res.set('X-XSS-Success', 'SCENARIO75{<svg>}');
+
+    let fetchPayload = req.body.feedback ||'';
+
+    if(fetchPayload.toLowerCase().includes('fetch')) {
+        res.set('X-FETCH-Success', 'SCENARIO75{fetch}');
+    }
     res.redirect('/dashboard');
 });
 

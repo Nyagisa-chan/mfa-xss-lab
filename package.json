@@ -1,7 +1,7 @@
 {
   "name": "mfa-xss-lab",
-  "version": "1.0.0",
-  "description": "Simple target app",
+  "version": "1.1.0",
+  "description": "Simple mfa xss lab",
   "main": "app.js",
   "dependencies": {
     "express": "^4.18.2",

@@ -20,6 +20,10 @@ RUN useradd -m -s /bin/bash analyst && \
 RUN mkdir -p /opt/admin/logs
 # Copy static logs from ./logs directory into the container
 COPY ./logs/ /opt/admin/logs/
+
+# Copy nginx.conf file to the container
+COPY nginx.conf /home/analyst/nginx.conf-backup
+
 # Ensure permissions allow read access
 RUN chmod -R 755 /opt/admin/logs
 
