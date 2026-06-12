@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Feedback System - MFA Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🔐 Admin Feedback System</h1>
+    </header>
+
+    <div class="container">
+        <div class="mfa-box">
+            <h2>MFA Verification</h2>
+            <p class="mfa-subtitle">A verification code is required to access the dashboard.</p>
+            
+            <form class="mfa-form" action="/api/verify-mfa" method="POST">
+                <div class="form-group">
+                    <label for="otp">Enter OTP Code</label>
+                    <input 
+                        type="text" 
+                        id="otp" 
+                        name="otp" 
+                        placeholder="Enter the 6-digit code"
+                        maxlength="6"
+                        inputmode="numeric"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="verify-button">Verify OTP</button>
+            </form>
+
+            <div class="mfa-footer">
+                <a href="/login" class="back-login">Back to Login</a>
+            </div>
+        </div>
+    </div>
+
+<!--
+         __
+ _(\    |@@|
+(__/\__ \--/ __
+   \___|----|  |   __
+       \ }{ /\ )_ / _\
+       /\__/\ \__O (__
+      (--/\--)    \__/
+      _)(  )(_
+     `---''---`
+    Check Me out
+    SCENARIO75{robots.txt}
+-->
+</body>
+</html>

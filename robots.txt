@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /api/verify-mfa, /dashboard
+
+# SCENARIO75{/api/verify-mfa}
+# SCENARIO75{/dashboard}

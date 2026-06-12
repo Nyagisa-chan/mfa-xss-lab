@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Feedback System - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🔐 Admin Feedback System</h1>
+        <div class="header-right">
+            <a href="/" class="logout-btn">Logout</a>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="dashboard-content">
+            <!-- Welcome Section -->
+            <div class="dashboard-header">
+                <h2>Admin Feedback Dashboard</h2>
+                <p class="flag-message">FLAG{MFA_BYPASSED_WELCOME_ADMIN}</p>
+            </div>
+
+            {{COOKIE_MESSAGE}}
+
+            <!-- Recent Feedback Section -->
+            <section class="feedback-section">
+                <h3>📋 Recent Feedback</h3>
+                <div class="feedback-list" id="feedbackList">
+                    {{FEEDBACK_LIST}}
+                </div>
+            </section>
+
+            <!-- Submit Feedback Section -->
+            <section class="feedback-form-section">
+                <h3>✍️ Submit System Feedback</h3>
+                <form action="/feedback" method="POST" class="feedback-form">
+                    <div class="form-group">
+                        <!-- SCENARIO75{POST} -->
+                        <label for="feedback">Your Feedback</label>
+                        <textarea 
+                            id="feedback" 
+                            name="feedback" 
+                            rows="5" 
+                            placeholder="Share your feedback about the system..."
+                            required
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Feedback</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Admin Feedback System. All rights reserved.</p>
+        <p>For support, contact: <strong>support@adminfeedback.com</strong></p>
+    </footer>
+
+<!--
+         __
+ _(\    |@@|
+(__/\__ \--/ __
+   \___|----|  |   __
+       \ }{ /\ )_ / _\
+       /\__/\ \__O (__
+      (--/\--)    \__/
+      _)(  )(_
+     `---''---`
+    Check Me out
+    SCENARIO75{robots.txt}
+-->
+</body>
+</html>
