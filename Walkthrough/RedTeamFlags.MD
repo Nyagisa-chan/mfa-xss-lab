@@ -1,0 +1,15 @@
+Red Team Flags
+- SCENARIO75{Node.js}
+- SCENARIO75{/api/verify-mfa}
+- SCENARIO75{/dashboard}
+- SCENARIO75{robots.txt}
+- SCENARIO75{pre_mfa_session}
+- SCENARIO75{pending_mfa_verification}
+- SCENARIO75{POST}
+- SCENARIO75{403}
+- SCENARIO75{<svg>}
+- SCENARIO75{window['docu'+'ment']['coo'+'kie']}
+- SCENARIO75{False}
+- SCENARIO75{fetch}
+- SCENARIO75{adm_sess}
+- SCENARIO75{RED_C00k13_MFA_Byp4ss_0wn3d}

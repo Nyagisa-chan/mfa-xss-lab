@@ -107,6 +107,8 @@ app.post('/feedback', simpleWAF, (req, res) => {
     if(fetchPayload.toLowerCase().includes('fetch')) {
         res.set('X-FETCH-Success', 'SCENARIO75{fetch}');
     }
+
+    res.set('X-Leaked-Creds', 'adm_sess_cookie: adm_sess_access');
     res.redirect('/dashboard');
 });
 
